@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="service-container">
+            <div class="services-img">
+                <img src="{{ asset('bundles/app/img/about_breed_img.png') }}">
+            </div>
+            <div class="service-list">
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <div class="button-container"> 
+                        <a class="orange-button" href="{{ path('services_new') }}">{{'total.create'|trans}}</a>
+                    </div>
+
+                {% endif %}
+                <ul>
+                    {% for service in services %}
+                        <div class="service-list-item">
+                            <li>
+                                <div class="service-name">
+                                    <a onclick="$(this).parents('.service-list-item').find('.service-about').toggleClass('hidden');" class="decorated-href">
+                                        {% if loc!='en' %}
+                                            <td>{{ service.services }}</td>
+                                        {% else %}
+                                            <td>{{service.servicesEng}}</td>
+                                        {%endif%}
+                                    </a>
+                                </div>
+
+                                <div class="service-about hidden">
+                                    <div class="service-description">
+                                        {{ get_translated(service, 'description') }}
+                                    </div>
+                                    <div class="service-price">
+                                        {{ service.price }}{{"total.uah"|trans}}
+                                    </div>
+                                    <div>
+                                        <a class="orange-button colorbox-ajax-form" href="{{ path('services_comment', { 'idServices': service.idServices }) }}">
+                                            {{'total.askquestion'|trans}}
+                                        </a>
+                                    </div>
+                                    <div>
+                                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                            <a class="orange-button" href="{{ path('services_edit', { 'idServices': service.idServices }) }}">
+                                                {{'total.edit'|trans}}
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                    {% endfor%}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

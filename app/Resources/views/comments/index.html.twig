@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="comments container">
+        <div>
+            {% if comments | length %}
+                <h3>{{"total.question_about.services"|trans}}</h3>
+                {% for comment in comments %}
+                    <div class="comment-item">
+                        <div class="comment-date">
+                            {% if comment.cdate %}{{ comment.cdate|date('d-m-Y') }}{% endif %}
+                        </div>
+                        <div class="user-name">
+                            {{ comment.klname }}
+                        </div>
+                        <div class="user-phone">
+                            {{ comment.phone }}
+                        </div>
+                        <div class="user-email">
+                            {{ comment.email }}
+                        </div>
+                        <div class="comment-theme">
+                            {{"total.subject"|trans}}
+                            {{ comment.services}}
+                        </div>
+                        <div class="user-question">
+                            {{ comment.question }}
+                        </div>                    
+                        <div class="comment-delete">
+                            <a class="orange-button" href="{{ path('delete_route_name', {'id': comment.idComments }) }}">{{'total.delete'|trans}}</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div>
+            {% if commentsdogs | length %}
+                <h3>{{"total.question_about.dogs"|trans}}</h3>
+                {% for comment in commentsdogs %}
+                    <div class="comment-item">
+                        <div class="comment-date">
+                            {% if comment.cdate %}{{ comment.cdate|date('Y-m-d') }}{% endif %}
+                        </div>
+                        <div class="user-name">
+                            {{ comment.klname }}
+                        </div>
+                        <div class="user-phone">
+                            {{ comment.phone }}
+                        </div>
+                        <div class="user-email">
+                            {{ comment.email }}
+                        </div>
+                        <div class="comment-theme">
+                            {{"total.subject"|trans}}
+                            {{ comment.name}}
+                        </div>
+                        <div class="user-question">
+                            {{ comment.question }}
+                        </div>                    
+                        <div class="comment-delete">
+                            <a class="orange-button" href="{{ path('delete_route_name', {'id': comment.idComments }) }}">{{'total.delete'|trans}}</a>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

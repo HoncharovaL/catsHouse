@@ -1,0 +1,1 @@
+<?php return unserialize('C:42:"Vich\\UploaderBundle\\Metadata\\ClassMetadata":223:{a:6:{i:0;s:21:"AppBundle\\Entity\\Dogs";i:1;a:0:{}i:2;a:0:{}i:3;a:0:{}i:4;i:1495618342;i:5;a:1:{s:9:"photoFile";a:3:{s:7:"mapping";s:11:"photo_image";s:12:"propertyName";s:9:"photoFile";s:16:"fileNameProperty";s:5:"photo";}}}}');

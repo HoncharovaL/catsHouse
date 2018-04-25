@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class='container'>
+        <div class='photos'>
+            {% for photo in dogsPhotos %}
+                <div class='photo-item'><a class='colorbox group1' href='{{photo_path}}{{photo.photo}}'><img src="{{photo_path}}{{photo.photo}}"/></a></div>
+                    {% endfor %}
+        </div>
+        <div class='videos'>
+            {% for video in videos %}
+                <div class='video-item'>{{video.video|raw}}</div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

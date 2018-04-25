@@ -1,0 +1,154 @@
+total:
+    partners: Partners
+    name: Name (Ru)
+    name_en: Name 
+    admin_panel: Admin panel
+    question_about:
+        services: Questions about services
+        dogs: Questions about dogs
+    subject: "Subject:"
+    photos: Photos
+    videos: Videos
+    log_in: Login
+    askquestion: Ask Question
+    questions: Questions
+    add_photo: Add another photo
+    add_video: Add another video
+    add_title: Add title
+    add_vaccination: Add vaccination
+    add_dog: Add dog
+    main_info: Main info
+    action: Action
+    show: Show
+    edit: Edit
+    create: Create
+    delete: Delete
+    back: Back
+    comments: Comments
+    save: Save
+    send: Send
+    date: Date
+    mother: Mother
+    father: Father
+    dogs: Dogs
+    partners: Partners
+    reviews: 'Reviews:'
+    caption: Caption
+    news: News
+    type: Category
+    exhibition: Exhibition
+    advice: Advice
+    other: Other
+    male: Male
+    female: Femail
+    forsale: Looking for a host
+    select_file: Select file
+    uah: UAH
+
+user:
+    name: User name
+    phone: Phone
+    comment: Comment
+    email: Email
+
+dogs:    
+    ourdogs: Our Dogs
+    title: Title (RU)
+    title_en: Title
+    vaccination: Vaccination (Ru)
+    vaccination_en: Vaccination 
+    about:
+        bdate: Birthday
+        name: Name
+        nameen: Name (En)
+        age: '{0} %month% m. old|]1,Inf[ %year% y. old'
+        age_with_years: %year% y., %month% m. old
+        age_without_years:  %month% m. old
+        soldout: Sold out
+        forsale: Looking for a host
+        birthday: Birthday
+        titles: Titles
+        vaccinations: Vaccinations
+        dogage: Age
+        quality: Quality
+        sex: Sex
+        state: State
+        quality_Show: For show
+        quality_Breed: For breeding
+        quality_Pet: Pet  
+        description: Description
+        descriptionen: Description (En)
+        photo: Photo
+        photoFile: Photo
+        litters: Litters
+        otherphotos: Other photos
+        videos: Videos
+        dogsPhotos: Additional photos
+        dogTitles: Titles
+        dogVaccinations: Vaccinations
+
+            
+nursery:
+    list:
+        name: 'Nursery:'
+        photo: Photo
+        bdate: Birthday
+        owner: 'Owner:'
+        adress: Adress
+        phone: Phone
+        cellphone: Cellphone
+        email: E-mail
+        site: Site
+        about: About
+        nursery: Nursery list
+
+
+main: 
+    title: Home
+    block:
+        partners: Our friends
+        news: News
+        about_breed: About breed
+    dogs:
+        take: Take
+        for_you: your own
+        tailed: tailed
+        zabava: fun
+    about_breed:
+        description:  Miniature Schnauzer remains one of the most popular worldwide, primarily for its temperament and relatively small size. After all, it can be kept even in the smallest apartment. This is a very miniature breed with a weight of no more than 7 kg.
+
+header:
+    link:
+        main: Home
+        our_dogs: Our dogs
+        litters: Litters
+        advices: Care tips
+        exhibitions: Exhibitions
+        services: Services
+        gallery: Gallery
+        reviews: Reviews
+        login: Login
+        logout: Logout
+        
+services:
+    list:
+        services: Service
+        description: Description
+        price: Price
+
+
+reviews:
+    text:
+        comment_author: '<strong>%name%</strong> wrote:'
+        pay_attention: Pay attention!
+        comment_disclaimer: '<p>All comments are thoroughly moderated. For publication are not allowed: </p><p> - comments of an advertising nature </p><p> - comments containing insults </p><p> - comments without specifying contact information</p>'
+    nursery:
+        conact_us_via: You can contact us via
+        conact_us_via_phones: 'phone:'
+        conact_us_via_email: 'email:'
+    label: 
+        name: Name
+        email: Email
+        comment: Comment
+        phone: Phone
+        

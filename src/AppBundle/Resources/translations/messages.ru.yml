@@ -1,0 +1,154 @@
+total:
+    partners: Партнеры
+    name: Название
+    name_en: Название (EN)
+    admin_panel: Админ панель
+    question_about:
+        services: Вопросы о услугах
+        dogs: Вопросы о собаках
+    subject: "Тема:"
+    photos: Фотографии
+    videos: Видео
+    log_in: Вход
+    questions: Вопросы
+    askquestion: Задать вопрос
+    add_photo: Добавить фото
+    add_video: Добавить видео
+    add_title: Добавить титул
+    add_vaccination: Добавить прививку
+    add_dog: Добавить собаку
+    main_info: Главное
+    action: Действия
+    show: Подробнее
+    edit: Изменить
+    create: Создать
+    delete: Удалить
+    back: Назад
+    comments: Комментарии
+    save: Сохранить
+    send: Отправить
+    date: Дата
+    mother: Мать
+    father: Отец
+    dogs: Собаки
+    partners: Партнеры
+    reviews: 'Отзывы:'
+    caption: Заголовок
+    news: Новость
+    type: Категория
+    exhibition: Выставки
+    advice: Советы
+    other: Другое 
+    male: Кобель
+    female: Сука
+    forsale: Ищу хозяина
+    select_file: Выберите файл
+    uah: грн.
+
+
+user:
+    name: Имя пользователя
+    phone: Телефон
+    comment: Комментарий
+    email: Email
+
+dogs:
+    ourdogs: Наши собаки
+    title: Титул 
+    title_en: Титул (EN)
+    vaccination: Прививка
+    vaccination_en: Прививка (En)
+    about:
+        bdate: Дата рождения
+        name: Имя
+        nameen: Имя (En)
+        age: '{0} %month% м.|]1,Inf[ %year% г.'
+        age_with_years: %year% г. %month% м.
+        age_without_years:  %month% м.
+        soldout: Продан
+        forsale: Ищу хозяина
+        birthday: Дата рождения
+        titles: Титулы
+        vaccinations: Прививки
+        dogage: Возвраст
+        quality: Качество
+        sex: Пол
+        state: Статус
+        quality_Show: Для выставок
+        quality_Breed: Для разведения
+        quality_Pet: Домашний питомец
+        description: Описание
+        descriptionen: Описание (En)
+        photo: Фото
+        photoFile: Фото
+        litters: Помет
+        otherphotos: Другие фото
+        videos: Видео
+        dogsPhotos:  Другие фото
+        dogTitles: Титулы
+        dogVaccinations: Прививки
+        
+        
+nursery:
+    list:
+        about: О питомнике
+        name: 'Питомник:'
+        photo: Фотография
+        bdate: Дата основания
+        owner: 'Владелец:'
+        adress: Адрес
+        phone: Телефон
+        cellphone: Мобильный телефон
+        email: E-mail
+        site: Сайт
+        
+        nursery: Список питомников       
+
+
+
+main: 
+    title: Главная
+    block:
+        partners: Наши друзья
+        news: Новости
+        about_breed: О породе
+    dogs:
+        take: Заведи
+        for_you: себе
+        tailed: хвостатое
+        zabava: счастье
+    about_breed:
+        description: Цвергшнауцер или карликовый шнауцер занимает почетное 7-е место в списке самых популярных собак во всем мире. Такая популярность объясняется отличной характеристикой и простотой содержания. Ведь цверга можно содержать даже в самой маленькой квартире. Это очень миниатюрная служебная порода с весом не более 7 кг.
+    
+header:
+    link:
+        main: Главная
+        our_dogs: Собаки
+        litters: Пометы
+        advices: Советы
+        exhibitions: Выставки
+        services: Услуги
+        gallery: Галерея
+        reviews: Отзывы
+        login: Вход
+        logout: Выход
+
+services:
+    list:
+        services: Услуга
+        description: Описание
+        price: Цена
+reviews:
+    text:
+        comment_author: '<strong>%name%</strong> написала:'
+        pay_attention: Обратите внимание!
+        comment_disclaimer: '<p>Все комментарии проходят тщательную модерацию. К публикации не допускаются: </p><p> - комментарии рекламного характера </p><p> - комментарии содержащие оскорбления </p><p> - комментарии без указания контактных данных</p>'
+    nursery:
+        conact_us_via: Вы можете связаться со мной по
+        conact_us_via_phones: 'телефонам:'
+        conact_us_via_email: 'эл. почте:'
+    label: 
+        name: Ваше имя
+        email: Ваш e-mail
+        comment: Комментарий
+        phone: Телефон

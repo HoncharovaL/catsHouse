@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="news-edit container">
+        <div class="row">
+            <div class="button-container left col-4">
+                <a class="grey-button" href="{{ path('homepage') }}">{{'total.back'|trans}}</a>
+            </div>
+            <div class="button-container col-8">
+                {% if delete_form is defined %}
+                    {{ form_start(delete_form) }}
+                    <input class="grey-button" type="submit" value="{{"total.delete"|trans}}">
+                    {{ form_end(delete_form) }}
+                {% endif %}
+                <input class="orange-button" onclick="$('#main-form').submit();" type="submit" value="{{'total.save'|trans}}"/>
+            </div>
+        </div>
+        {{ form_start(form, {'attr': {'id': 'main-form'} }) }}
+        <div class="tabs">
+            <ul>
+                <li><a href="#tab-main-info">{{'total.main_info'|trans}}</a></li>
+                <li><a href="#tab-photos">{{"total.photos"|trans}}</a></li>
+                <li><a href="#tab-videos">{{"total.videos"|trans}}</a></li>
+            </ul>
+            <div class="news-info row" id="tab-main-info">
+                <div class="main-photo col-4">
+                    {{ form_widget(form.photoFile)}}
+                </div>
+                <div class="main-info col-6">
+                    {{ form_row(form.ndate, {'attr': {'class': 'parent-width'} })}}
+                    {{ form_row(form.title, {'attr': {'class': 'parent-width'} })}}
+                    {{ form_row(form.titleEn, {'attr': {'class': 'parent-width'} })}}
+                    {{ form_row(form.newsType, {'attr': {'class': 'parent-width'} })}}
+                    {{ form_row(form.newsdesc, {'attr': {'class': 'parent-width'} })}}
+                    {{ form_row(form.newsdescEn, {'attr': {'class': 'parent-width'} })}}
+                </div>
+            </div>
+            <div class="embedded-form photos" id="tab-photos">
+                <ul class="form-collection-container" data-count="{{form.dogsPhotos|length}}"
+                    data-prototype="{{ form_widget(form.dogsPhotos.vars.prototype)|e }}">
+                    {% for dogsPhoto in form.dogsPhotos %}
+                        <li>
+                            {{ form_row(dogsPhoto.photoFile) }}
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="add-button-container">
+                    <a href="#" class="add-new-element">{{"total.add_photo"|trans}}</a>
+                </div>
+            </div>
+            {% do form.dogsPhotos.setRendered %}
+
+            <div class="embedded-form videos" id="tab-videos">
+                <ul class="form-collection-container" data-count="{{ form.videos|length }}" id="videos-fields-list"
+                    data-prototype="{{ form_widget(form.videos.vars.prototype)|e }}">
+                    {% for video in form.videos %}
+                        <li>
+                            {{ form_row(video.video) }}
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="add-button-container">
+                    <a href="#" class="add-new-element">{{"total.add_video"|trans}}</a>
+                </div>
+            </div>
+            {% do form.videos.setRendered %}
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{parent()}}
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.embedded-form .add-new-element').on('click', function (e) {
+                e.preventDefault();
+
+                var list = $(this).parents('.embedded-form').find('.form-collection-container');
+
+                // grab the prototype template
+                var newWidget = list.attr('data-prototype');
+                var count = list.data('count');
+                newWidget = newWidget.replace(/__name__/g, count);
+                count++;
+                list.data('count', count);
+
+                // create a new list element and add it to the list
+                var newLi = $('<li></li>').html(newWidget);
+                newLi.appendTo(list);
+                addDeleteLink(newLi);
+            });
+
+            // add a delete link to all of the existing tag form li elements
+            $('.form-collection-container').find('li').each(function () {
+                addDeleteLink($(this));
+            });
+
+            function addDeleteLink($formLi) {
+                var $removeLi = $('<a class="delete-icon" title="{{"total.delete"|trans}}" href="#"></a>');
+                $formLi.append($removeLi);
+
+                $removeLi.on('click', function (e) {
+                    e.preventDefault();
+                    $formLi.remove();
+                });
+            }
+        });
+    </script>
+{% endblock %}

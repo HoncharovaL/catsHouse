@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+     <div class="container">
+        <div class="titles-container">
+            <div class="button-container"><a  class="orange-button colorbox-ajax-form" href="{{ path('titles_new') }}">{{'total.create'|trans}}</a></div>
+            {% for title in titles %}
+                <div class="title-item">     
+                    <div class="left-col">
+                        <div class="title-info">
+                            {{ title.title }}  
+                        </div>
+                        <div class="title-info">
+                            {{ title.titleEng }}
+                        </div>                                        
+                    </div>
+                    <div class="right-col">
+                        <a class="colorbox-ajax-form orange-button" href="{{ path('titles_edit', { 'idTitles': title.idTitles }) }}">
+                            {{"total.edit"|trans}}
+                        </a>
+                        <div>
+                            <a class="orange-button" href="{{path('titles_delete_href', {'idTitles': title.idTitles}) }}">{{"total.delete"|trans}}</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+    
+{% endblock %}
