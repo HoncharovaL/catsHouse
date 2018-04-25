@@ -1,9 +1,0 @@
-/app/config/parameters.yml
-/var/cache/
-/var/logs/
-/var/sessions/
-/vendor/
-/web/bundles/
-/nbproject/private/
-/nbproject/
-/web/images/
