@@ -18,36 +18,31 @@
                     <div class="header">
                         <div class="container">
                             <div class="header-top">
-                                <div class="logo">
-                                    <a href="{{path("homepage")}}"><img src="{{ asset('bundles/app/img/logo_orange.png') }}"/></a>
-                                </div>
-                                <div class="menu-item"><a class='decorated-href' href="{{path("homepage")}}">{{"header.link.main"|trans}}</a></div>
-                                <div class="menu-item"><a class='decorated-href' href="{{path("dogs_index")}}">{{"header.link.our_dogs"|trans}}</a></div>
-                                <div class="menu-item"><a class='decorated-href' href="{{path("litters_index")}}">{{"header.link.litters"|trans}}</a></div>
-                                <div class="menu-item"><a class='decorated-href' href="{{path("news_index", { 'newsType': 2})}}">{{"header.link.advices"|trans}}</a></div>
-                                <div class="menu-item"><a class='decorated-href' href="{{path("news_index", { 'newsType': 1})}}">{{"header.link.exhibitions"|trans}}</a></div>
-                                <div class="menu-item"><a class='decorated-href' href="{{path("services_index")}}">{{"header.link.services"|trans}}</a></div>
-                                <div class="menu-item"><a class='decorated-href' href="{{path('dogsphotos_index')}}">{{"header.link.gallery"|trans}}</a></div>
-                                <div class="menu-item"><a class='decorated-href' href="{{ path('nursery_show', { 'idNursery': get_nursery_id()}) }}">{{"header.link.reviews"|trans}}</a></div>
+                                <div class="menu-item"><a class='interactive-element' href="{{path("homepage")}}">{{"header.link.main"|trans}}</a></div>
+                                <div class="menu-item"><a class='interactive-element' href="{{path("dogs_index")}}">{{"header.link.our_cats"|trans}}</a></div>
+                                <div class="menu-item"><a class='interactive-element' href="{{path("news_index", { 'newsType': 2})}}">{{"header.link.articles"|trans}}</a></div>
+                                <div class="menu-item"><a class='interactive-element' href="{{path("news_index", { 'newsType': 1})}}">{{"header.link.help"|trans}}</a></div>
+                                <div class="menu-item"><a class='interactive-element' href="{{path('dogsphotos_index')}}">{{"header.link.gallery"|trans}}</a></div>
+                                <div class="menu-item"><a class='interactive-element' href="{{ path('nursery_show', { 'idNursery': get_nursery_id()}) }}">{{"header.link.about_us"|trans}}</a></div>
                                 <div class="menu-item">
                                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                                        <div class=" dropdownbtn">
+                                        <div class=" dropdownbtn interactive-element">
                                             {{"total.admin_panel"|trans}}     
                                             <div class="dropdown-content">
                                                 <div class="dropdown-item">
-                                                    <a class="decorated-href" href="{{path('vaccinations_index')}}" > {{"dogs.about.vaccinations"|trans}} </a>
+                                                    <a class="interactive-element" href="{{path('vaccinations_index')}}" > {{"dogs.about.vaccinations"|trans}} </a>
                                                 </div>
                                                 <div class="dropdown-item">
-                                                    <a class="decorated-href" href="{{path('titles_index')}}"> {{"dogs.about.titles"|trans}} </a>
+                                                    <a class="interactive-element" href="{{path('titles_index')}}"> {{"dogs.about.titles"|trans}} </a>
                                                 </div>
                                                 <div class="dropdown-item">
-                                                    <a class="decorated-href" href="{{path('comments_index')}}"> {{"total.questions"|trans}} </a>
+                                                    <a class="interactive-element" href="{{path('comments_index')}}"> {{"total.questions"|trans}} </a>
                                                 </div>
                                                 <div class="dropdown-item">
-                                                    <a class="decorated-href" href="{{path('nursery_index')}}"> {{"total.partners"|trans}} </a>
+                                                    <a class="interactive-element" href="{{path('nursery_index')}}"> {{"total.partners"|trans}} </a>
                                                 </div>
                                                 <div class="dropdown-item">
-                                                    <a  class="decorated-href" href="{{path('fos_user_security_logout')}}">
+                                                    <a  class="interactive-element" href="{{path('fos_user_security_logout')}}">
                                                         {{"header.link.logout"|trans}}
                                                     </a>
                                                 </div>
@@ -59,15 +54,7 @@
                                 </div>
                                 <div class="locale-switcher">{{locale_switcher()}}</div>
                             </div>
-                            <div class="header-bottom">
-                                {% set phonenumbers = get_nursery_phonenumbers() %}
-                                {% for phonenumber in phonenumbers %}
-                                    <div class="header-bottom-phonenumber">
-                                        <img src="{{ asset('bundles/app/img/call.png') }}"/>
-                                        <span>{{phonenumber}}</span>
-                                    </div>
-                                {% endfor %}
-                            </div>
+                            
                         </div>
                     </div>
                 {% endblock %}
@@ -75,11 +62,11 @@
             {% block body %}{% endblock %}
             {% block footer %}
                 <div class="footer">
-                    <div class="container">
-                        <div class="footer-logo">
-                            <img src="{{ asset('bundles/app/img/logo_grey.png') }}"/>
+                    <div class="container footer-container">
+                        <div class="footer-logo logo">
+                            <img class="logo-img" src="{{ asset('bundles/app/img/logo.png') }}"/>
+                            <div class="logo-text">cats house</div>
                         </div>
-                        <hr/>
                         <div class="footer-contacts">
                             {% set phonenumbers = get_nursery_phonenumbers() %}
                             <div class="footer-contacts-phone">
@@ -89,7 +76,6 @@
                             </div>
                             <div>{{ get_nursery_email() }}</div>
                             <div>{{ get_nursery_address() }}</div>
-                            <div>{{ get_nursery_owner() }}</div>
                         </div>
                     </div>
                 </div>

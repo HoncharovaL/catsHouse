@@ -8,24 +8,41 @@
     font-family: eirikRaude;
     src: url(../fonts/EIRIK_RAUDE.ttf);
 }
+@font-face {
+    font-family: robotoSBold;
+    src: url(../fonts/RobotoSlab-Bold.ttf);
+}
+@font-face {
+    font-family: robotoMed;
+    src: url(../fonts/Roboto-Medium.ttf);
+}
+@font-face {
+    font-family: robotoReg;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: ghostReg;
+    src: url(../fonts/Ghostlight-Regular.ttf);
+}
 
 body
 {
-    background-color: #f8f8f8;
-    color: #323232;
-    font: 14px Verdana;
+    background-color: white;
+    color: #2f2f2f;
+    font: 14px robotoReg;
 }
 
 a {
-    color : #323232;
+    color : #2f2f2f;
     text-decoration: none;
     cursor: pointer;
 }
-
-.decorated-href:hover {
-    color: #e59e18;
-    border-bottom: 2px #e59e18 dashed;
-} 
+.interactive-element{
+    opacity: 0.8;
+}
+.interactive-element:hover{
+    opacity: 1;
+}
 
 h3 {
     text-align: center;
@@ -57,7 +74,7 @@ h3 {
     padding-right: 0;
 }
 .container {
-    width: 1300px;
+    width: 1000px;
     margin: auto;
 }
 
@@ -109,35 +126,28 @@ h3 {
 .hidden {
     display: none;
 }
-.header {
-    background-image: url(../img/top.png);
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center;
-    height: 142px;
+.header{
+    background-color: #efefef;
 }
 .header-top {
-    vertical-align: middle;
-    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 25px 0 15px 0;
+    
 }
 
-.header-top .logo {
-    width: 15%;
-    float: left;
-    height: 77px;
-    display: inline-block;
-}
+
 
 .header-top .menu-item {
-    width: 100px;
-    height: 77px;
-    display: inline-block;
-    margin: 0 auto;
-    line-height: 77px;
-    text-align: center;
+
+    padding: 10px 10px;
 }
-.menu-item .locale-switcher img{
-    width: 10px;
+.locale-switcher{
+    margin: 0 20px;
+}
+.locale-switcher .current-locale{
+    display: none;
 }
 .menu-item .dropdownbtn{
     width: 135px;
@@ -159,16 +169,35 @@ h3 {
 
 .footer {
     padding: 30px 0;
-    background-color: #eeeeec;
+    background-color: white;
+    border-top: 1px solid #efefef;
+    text-align: center;
+}
+.footer-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.footer-logo{
+    padding-bottom: 5px;
+    border-bottom: 2px solid #2f2f2f;
+    margin-bottom: 15px;
 }
 
-.footer .footer-contacts,
-.footer .footer-logo
-{
-    width: 30%;
-    text-align: center;
-    margin: 30px auto;
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
 }
+.logo-text{
+    text-transform: uppercase;
+    font-family: ghostReg;
+    font-size: 20px;
+}
+
 
 .footer hr {
     color: #323232;
@@ -176,6 +205,9 @@ h3 {
     width: 30%;
     margin: auto;
     height: 1px;
+}
+.footer-contacts *{
+    margin-bottom: 3px;
 }
 
 .footer-contacts-phone {
@@ -786,15 +818,6 @@ h3 {
 }
 .dropdownbtn{
     cursor: pointer;
-}
-.locale-switcher{
-    display: inline-block;
-    float: right;
-    width: 40px;
-}
-.locale-switcher img {
-    max-width: 30px;
-
 }
 
 .ask-question, .log-in-head, .edit-head{

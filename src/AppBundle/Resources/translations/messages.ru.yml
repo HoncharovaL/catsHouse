@@ -123,13 +123,13 @@ main:
 header:
     link:
         main: Главная
-        our_dogs: Собаки
+        our_cats: Наши кошки
         litters: Пометы
-        advices: Советы
-        exhibitions: Выставки
+        articles: Статьи
+        help: Нужна помощь
         services: Услуги
         gallery: Галерея
-        reviews: Отзывы
+        about_us: О нас
         login: Вход
         logout: Выход
 

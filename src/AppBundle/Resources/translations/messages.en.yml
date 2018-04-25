@@ -120,13 +120,13 @@ main:
 header:
     link:
         main: Home
-        our_dogs: Our dogs
+        our_cats: Our cats
         litters: Litters
-        advices: Care tips
-        exhibitions: Exhibitions
+        articles: Articles
+        help: Help
         services: Services
         gallery: Gallery
-        reviews: Reviews
+        about_us: About us
         login: Login
         logout: Logout
         
