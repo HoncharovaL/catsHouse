@@ -2,17 +2,7 @@
 
 {% block body %}
     <div class='container'>
-        <div class='news-container'>
-            <h3>
-                {% if app.request.get('newsType') == 1 %}
-                    {{ 'header.link.exhibitions'|trans }}
-                {% elseif app.request.get('newsType') == 2 %}
-                    {{ 'header.link.advices'|trans }}
-                {% else%}
-                    {{ 'main.block.news'|trans }}
-                {% endif %}
-            </h3>
-
+        <div class='news-container container'>
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <div class='button-container'>
                     <a class="orange-button" href="{{ path('news_new') }}">{{ "total.create"|trans }}</a>
@@ -20,24 +10,21 @@
             {% endif %}
             <div class='news-list'>
                 {% for news in news %}
-                    <div class="home-news-item">
-                        <div class="home-news-item-image">
+                    <div class="news-item">
+                        <div class="news-item-image">
                             <img src="{{photo_path}}{{news.photo}}"/>
                         </div>
-                        <div class="home-news-item-text">
-                            <div class="home-news-item-title">
-                                <a class='decorated-href' href='{{path('news_show', {'idNews': news.idNews})}}'>{{ get_translated(news, 'title') }}</a>
-                            </div>
-                            <div class="home-news-item-description">
-                                {{ get_translated(news, 'newsdesc') }}
-                            </div>
+                        <div class="news-item-title underlined-orange">
+                            <a class='interactive-element' href='{{path('news_show', {'idNews': news.idNews})}}'>{{ get_translated(news, 'title') }}</a>
                         </div>
-
-                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <div class="button-container">
-                                <a class="orange-button" href="{{ path('news_edit', { 'idNews': news.idNews }) }}">{{"total.edit"|trans}}</a>
-                            </div>
-                        {% endif %}
+                        <div class="news-item-description">
+                            {{ news.newsdesc|length <= 1000 ? get_translated(news, 'newsdesc') : get_translated(news, 'newsdesc')|slice(0, 1000)~'...' }}
+                        </div>
+                        <div class="cats-house-news-more">
+                            <a class='interactive-element' href='{{path('news_show', {'idNews': news.idNews})}}'>
+                                {{'main.cats-house.more'|trans}}
+                            </a>
+                        </div>
                     </div>
                 {% endfor %}
             </div>
