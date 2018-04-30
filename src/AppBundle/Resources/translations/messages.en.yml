@@ -103,7 +103,17 @@ nursery:
         nursery: Nursery list
 
 
-main: 
+main:
+    cats-house:
+        header: Cats and kittens into the right hands.
+        choose: Choose pet
+        donate:
+            header: Your help is very important for us and our pets.
+            text: The one of the best ways to help us is donate. All money goes on pets maintenance and treatment.
+            button: Donate now
+        text: There is not so hard to take pet to your home and take care of it. They are willing to give you something in return and will be your best friends forever.
+        news: News
+        more: Read more>
     title: Home
     block:
         partners: Our friends

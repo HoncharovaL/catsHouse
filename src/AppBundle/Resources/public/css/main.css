@@ -61,6 +61,47 @@ h3 {
 .button-container.left {
     text-align: left;
 }
+.cats-house-preview{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: url(../img/cats-house-background.png);
+    height: 700px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: -75px;
+}
+.cats-house-info{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: robotoSlab;
+}
+.cats-house-header{
+    font-size: 35px;
+    line-height: 40px;
+    margin-top: 45px;
+    margin-bottom: 30px;
+}
+.cats-house-text{
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 45px;
+}
+.cats-house-donate{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url(../img/donate-background.png);
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: 100% bottom;
+    background-size: auto 450px;
+}
+
 .dogs-about-container .button-container{
     text-align: left;
 }
@@ -74,8 +115,9 @@ h3 {
     padding-right: 0;
 }
 .container {
-    width: 1000px;
-    margin: auto;
+    padding: 0 15%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .popup-form {
@@ -134,7 +176,7 @@ h3 {
     align-items: center;
     justify-content: flex-end;
     padding: 25px 0 15px 0;
-    
+
 }
 
 
@@ -214,106 +256,80 @@ h3 {
     font-weight: bold;
 }
 
-.home-dogs {
-    padding: 30px 0px; 
-    font: 18px eirikRaude;
-    text-align: center;
+.cats-house-list.container{
+    padding: 40px 15% 50px;
+    background-color: #f3f4f6;
 }
-.home-dogs-left-block-take {
-    font-size: 73px;
+.cats-house-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
-
-.home-dogs-left-block-for-u {
-    font-size: 123px;
-    color: #e59e18;
-}
-
-.home-dogs-left-block-tailed {
-    font-size: 48px;
-}
-
-.home-dogs-left-block-zabava {
-    font-size: 73px;
-    color: #e59e18;
-}
-.home-dogs-left-block{
-    text-align: right;    
-    width: 35%;
-    display: inline-block;
-    margin-top: 0px;
-}
-.home-dogs-right-block{
-    display: inline-block;
-    width: 64%;    
-}
-
-.home-about-breed {
-    background-image: url(../img/main_about_breed_bg.png);
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    color: #fff;
-    font: 18px eirikRaude;
-    z-index: 1;
+.cats-list-item{
+    width: 450px;
+    height: 325px;
     position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;
+    background-color: white;
 }
-
-.home-about-breed-image {
-    text-align: center;
-    margin-top: 15px;
-    padding-bottom: 15px;
+.cats-photo{
+    width: 100%;
+    height: 100%;
 }
-
-.home-about-breed-image img {
-    width: 300px;
+.cats-list-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-
-.home-news {
-    background: #f1f1ef;
+.cats-name-overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(252, 103, 3, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: opacity 0.5s linear;
+    opacity: 0;
+    font: 30px robotoSlab;
+    text-transform: uppercase;
+}
+.cats-list-item:hover .cats-name-overlay{
+    
+    opacity: 1;
+}
+.cats-house-news {
+    border-top: 1px solid transparent;
+    background-color: #fff;
     padding-bottom: 50px;
-    font: 18px eirikRaude;
-    color: #323232;
+    font: 15px robotoSlab;
+
+
+}
+.cats-house-news.container{
+    padding: 60px 10%;
+}
+.cats-house-news-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.home-news-item {
-    width: 400px;
-    height: 500px;
+.cats-house-news-item {
+    width: 350px;
+    height: 250px;
     overflow: hidden;
-    display: inline-block;
-    margin-left: 20px;
-    background: #fff;
-    border-bottom: 5px #e59e18 solid;
     margin-bottom: 15px;
 }
-
-.home-news-item  .decorated-href {
-    font:  18px eirikRaude;
-}
-
-.home-news-item-image {
-    height: 200px;
-    overflow: hidden;
-}
-
-.home-news-item-image img {
-    width: 400px;
-    z-index: -1;
-}
-
-.home-news-item-text {
-    position: relative;
-    z-index: 1;
-    padding: 20px;
-    margin-top: -10px;
-    border-top: 10px solid transparent;
-    background-image:
-        linear-gradient(white, white),  /*  общий фон блока, всегда идёт первым перекрывая всё что под ним  */
-        linear-gradient(to bottom right, transparent 50.5%, white 50.5%),
-        linear-gradient(to bottom left, transparent 50.5%, white 50.5%);
-    background-repeat: repeat, repeat-x, repeat-x;
-    background-position: 0 0, 10px 0, 10px 0;
-    background-size: auto auto, 20px 20px, 20px 20px;
-    background-clip: padding-box, border-box, border-box;  /*  обрезаем края у общей заливки  */
-    background-origin: padding-box, border-box, border-box, border-box, border-box; 
+.underlined-orange{
+    border-bottom: 2px #fc6703 solid;
 }
 
 .dogs-add-question, .log-in-content, .edit-content{
@@ -333,29 +349,22 @@ h3 {
     background-origin: padding-box, border-box, border-box, border-box, border-box; 
 }
 
-.home-news-item-title {
+.cats-house-news-title {
     font-weight: bold;
     text-align: center;
-    padding-bottom: 15px;
-    border-bottom: 1px #F3F3F3 solid;
+    padding: 15px 10px;
 }
 
-.home-news-item-description {
+.cats-house-news-description {
     color: #787878;
-    padding-top: 20px;
+    height: 120px;
+    padding: 20px 10px 25px;
 }
-
-.home-partners {
-    padding-bottom: 50px;
-    text-align: center;
+.cats-house-news-more{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
 }
-
-.home-partners img {
-    height: 35px;
-    width: 80px;
-    margin: 0 15px;
-}
-
 .reviews-about-nursery .nursery-photo, .reviews-about-nursery .nursery-description {
     display: inline-block;
 }
@@ -625,6 +634,17 @@ h3 {
 .dogs-add-question{
     text-align: center;
 
+}
+.orange-button{
+    padding:14px 30px;
+    font-family: robotoMed;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #fc6703;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
 }
 .log-in-content .orange-button{
     margin-top: 20px;

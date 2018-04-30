@@ -25,14 +25,7 @@ label {
 }
 
 .orange-button {
-    background-color: #e59e18;
-    border: none;
-    color: white;
-    padding: 10px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-    font: 20px eirikRaude;
+    border-style: none;
 }
 
 .grey-button {
