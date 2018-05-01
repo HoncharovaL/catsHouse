@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class='container'>
+    <div class='container gallery-page'>
         <div class='photos'>
             {% for photo in dogsPhotos %}
                 <div class='photo-item'><a class='colorbox group1' href='{{photo_path}}{{photo.photo}}'><img src="{{photo_path}}{{photo.photo}}"/></a></div>
