@@ -302,7 +302,7 @@ h3 {
     text-transform: uppercase;
 }
 .cats-list-item:hover .cats-name-overlay{
-    
+
     opacity: 1;
 }
 .cats-house-news {
@@ -494,87 +494,45 @@ h3 {
     line-height: 35px;
     padding: 30px 0;
 }
+.news-item-photos{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin: 40px 0 0;
+}
+.photo-item{
+    width: 300px;
+    height: 250px;
+    margin-bottom: 20px;
+}
+.photo-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
 .news-page {
-    margin-top: 20px;
-    overflow: hidden;
+    margin-top: 60px;
     background: #fff;
-    border-bottom: 5px #e59e18 solid;
+    margin-bottom: 70px;
 }
-
-.news-page .decorated-href {
-    font:  18px eirikRaude;
+.videos{
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
 }
-
-.news-page .image {
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    text-align: center;
+.video-item{
+    width: 300px;
+    height: auto;  
+    margin-bottom: 20px;
 }
-
-.news-page .image img {
-    width: 100%;
-    z-index: -1;
+.video-item iframe{
+    width: 300px;
+    height: auto;
 }
-
-.news-page .text {
-    position: relative;
-    z-index: 1;
-    padding: 20px;
-    margin-top: -10px;
-    border-top: 10px solid transparent;
-    background-image:
-        linear-gradient(white, white),  /*  общий фон блока, всегда идёт первым перекрывая всё что под ним  */
-        linear-gradient(to bottom right, transparent 50.5%, white 50.5%),
-        linear-gradient(to bottom left, transparent 50.5%, white 50.5%);
-    background-repeat: repeat, repeat-x, repeat-x;
-    background-position: 0 0, 10px 0, 10px 0;
-    background-size: auto auto, 20px 20px, 20px 20px;
-    background-clip: padding-box, border-box, border-box;  /*  обрезаем края у общей заливки  */
-    background-origin: padding-box, border-box, border-box, border-box, border-box; 
-}
-
-.news-page .title {
-    font-weight: bold;
-    text-align: center;
-    padding-bottom: 15px;
-    border-bottom: 1px #F3F3F3 solid;
-}
-
-.news-page .description {
-    color: #787878;
-    padding-top: 20px;
-}
-
-.photos .photo-item {
-    margin: 15px auto;
-    width: 31%;
-    height: 400px;
-    padding: 10px 10px;
-    display: inline-block;
-    text-align: center;
-}
-
-.photos .photo-item img {
-    max-height: 100%;
-    max-width: 100%;
-}
-
-.videos .video-item {
-    padding: 10px 10px;
-    display: inline-block;
-    text-align: center;
-}
-
-.videos .video-item iframe{
-    margin-left: 3px;
-}
-
-.videos {
-    margin: 20px 3%;
-}
-
 .dogs-show-container .videos {
     margin: 20px -4%;
 }
