@@ -14,7 +14,7 @@
             </div>
             <div class="cats-house-header">{{"main.cats-house.header"|trans}}</div>
             <div class="cats-house-text">{{"main.cats-house.text"|trans}}</div>
-            <div class="orange-button choose-pet-button">{{"main.cats-house.choose"|trans}}</div>
+            <a href="{{path("dogs_index")}}"><div class="orange-button choose-pet-button">{{"main.cats-house.choose"|trans}}</div></a>
         </div>
     </div>
     <div class="cats-house-donate container">
@@ -31,13 +31,15 @@
     </div>
     <div class="cats-house-list container">
         {% for dog in dogs %}
-            <div class="cats-list-item">
-            <div class="cats-photo">
-                <img class='cats-img' src="{{photo_path}}{{dog.photo}}" >
-            </div>
-            <div class='cats-name-overlay'>
-                {{ get_translated(dog, 'name') }}>
-            </div>
+            <div class="cats-house-list-item">
+                <div class="cats-house-photo">
+                    <img class='cats-house-img' src="{{photo_path}}{{dog.photo}}" >
+                </div>
+                <a href="{{ path('dogs_show', { 'id': dog.idDogs }) }}">
+                    <div class='cats-house-name-overlay'>
+                        {{ get_translated(dog, 'name') }}>
+                    </div>
+                </a>
             </div>
         {% endfor %}
     </div>

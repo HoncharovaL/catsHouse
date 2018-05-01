@@ -62,7 +62,7 @@ dogs:
         bdate: Дата рождения
         name: Имя
         nameen: Имя (En)
-        age: '{0} %month% м.|]1,Inf[ %year% г.'
+#        age: '{0} %month% м.|]1,Inf[ %year% г.'
         age_with_years: %year% г. %month% м.
         age_without_years:  %month% м.
         soldout: Продан

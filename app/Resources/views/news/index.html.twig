@@ -5,7 +5,7 @@
         <div class='news-container container'>
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <div class='button-container'>
-                    <a class="orange-button" href="{{ path('news_new') }}">{{ "total.create"|trans }}</a>
+                    <a class="orange-submit" href="{{ path('news_new') }}">{{ "total.create"|trans }}</a>
                 </div>
             {% endif %}
             <div class='news-list'>

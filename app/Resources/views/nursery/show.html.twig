@@ -6,7 +6,7 @@
             <div class="reviews-title underlined-orange">{{'header.link.about_us'|trans}}</div>
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <div class="button-container">
-                    <a class="orange-button" href="{{ path('nursery_edit', { 'idNursery': get_nursery_id()}) }}">{{"total.edit"|trans}}</a>
+                    <a class="orange-submit" href="{{ path('nursery_edit', { 'idNursery': get_nursery_id()}) }}">{{"total.edit"|trans}}</a>
                 </div>
             {% endif %}
             <div class="nursery-container">

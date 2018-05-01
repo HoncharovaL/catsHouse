@@ -1,60 +1,85 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class='container'>
-        <h3>{{"dogs.ourdogs"|trans}}</h3>
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                <div class='button-container'>
-                    <a class="orange-button" href="{{ path('dogs_new') }}">{{ "total.create"|trans }}</a>
-                </div>
-            {% endif %}
-        <div class="dogs-list">
+    <div class='container'> 
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <div class='button-container'>
+                <a class="orange-submit" href="{{ path('dogs_new') }}">{{ "total.create"|trans }}</a>
+            </div>
+        {% endif %}
+        <div class="cats-list">
 
-            <div class="dogs-list-item">
-                {% for dog in dogs %}
-                    <div class="dogs-photo-container">
-                        <img class='dogs-photo' src="{{photo_path}}{{dog.photo}}" >
+
+            {% for dog in dogs %}
+                <div class="cats-list-item">
+                    <div class="cats-photo-container">
+                        <img class='cats-photo' src="{{photo_path}}{{dog.photo}}" >
                     </div>
-                    <div class="dogs-about-container">
-                        <div class='sex-img'>
-                            <img src='{{ asset('bundles/app/img/sex/'~dog.sex~'.png') }}'>
-                        </div>
-                        <div class='dog-name'>
-                            {{ get_translated(dog, 'name') }}
+                    <div class="cats-about-container">
+                        <div class="cats-title">
+                            <div class='cats-sex'>
+                                <img src='{{ asset('bundles/app/img/sex/'~dog.sex~'.png') }}'>
+                            </div>
+                            <div class='cats-name'>
+                                {{ get_translated(dog, 'name') }}
+                            </div>
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                <a  class='cats-edit' href="{{ path('dogs_edit', { 'id': dog.idDogs }) }}"><img src='{{ asset('bundles/app/img/edit.png') }}'></a>
+                                {% endif %}
                         </div>
                         <div>
-                            {{"dogs.about.dogage"|trans}}
+                            {{"dogs.about.dogage"|trans}}:
                             {% set age = calculate_age(dog.bdate) %}
                             {% transchoice age.y with {'%month%': age.m, '%year%': age.y} %}
                             dogs.about.age
                             {% endtranschoice %}
                         </div>
                         <div>
+                            {{"dogs.about.vaccinations"|trans}}
+                            {% if dog.dogVaccinations | length %}
+                                {% for vacc in dog.dogVaccinations %}
+                                    <div>{{vacc.vaccinations}}</div>
+                                {% endfor %}
+                                {% else %}
+                                    <span> - </span>
+                            {% endif %}
+                        </div>
+                        {#<div>
                             {{"dogs.about.quality"|trans}}
                             {{("dogs.about.quality_"~dog.quality)|trans}}
-                        </div>
-                        <div>
+                        </div>#}
+                        {#<div>
                             {{"dogs.about.state"|trans}}
                             {% if dog.state %}
                                 {{"dogs.about.forsale"|trans}}
                             {% else %}
                                 {{"dogs.about.soldout"|trans}}    
                             {%endif%}
+                        </div>#}
+                        <div class='cats-description'>
+                            {{ dog.description|length <= 200 ? get_translated(dog, 'description') : get_translated(dog, 'description')|slice(0, 200)~'...' }}
                         </div>
-                        <div class='dogs-description'>
-                            {{ get_translated(dog, 'description') }}
+                        <div class="cats-more">
+                            <a class="orange-href" href="{{ path('dogs_show', { 'id': dog.idDogs }) }}">{{ "total.show"|trans }}>></a>   
                         </div>
-
-                        
-                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                                <a class="orange-button" href="{{ path('dogs_edit', { 'id': dog.idDogs }) }}">{{ "total.edit"|trans }}</a>
-                            {% endif %}
-                            <a class="orange-button" href="{{ path('dogs_show', { 'id': dog.idDogs }) }}">{{ "total.show"|trans }}</a>   
-                        
 
                     </div>
-                {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>  
+    <div class="cats-house-donate container">
+        <div class="cats-house-info">
+            <div class="cats-house-header">
+                {{'main.cats-house.donate.header'|trans}}
             </div>
-        </div>    
+            <div class="cats-house-text">
+                {{'main.cats-house.donate.text'|trans}}
+            </div>
+            <div class="orange-button choose-pet-button">{{"main.cats-house.donate.button"|trans}}</div>
+
+        </div>
     </div>
+</div>
 {% endblock %}

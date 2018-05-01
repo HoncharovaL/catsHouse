@@ -61,7 +61,7 @@ dogs:
         bdate: Birthday
         name: Name
         nameen: Name (En)
-        age: '{0} %month% m. old|]1,Inf[ %year% y. old'
+#        age: '{0} %month% m. old|]1,Inf[ %year% y. old'
         age_with_years: %year% y., %month% m. old
         age_without_years:  %month% m. old
         soldout: Sold out

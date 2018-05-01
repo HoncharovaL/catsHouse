@@ -5,18 +5,18 @@
 {% endblock %}
 
 {% block body %}
-    <div class='container'>
-        <div class='dogs-show-container'>
+    <div class='container cats-show-container'>
+        <div class='cats-list-item'>
 
-            <div class="dogs_photos row">
-                <div class='dogs-photo-container'>
-                    <a class='colorbox group1' href='{{photo_path}}{{dog.photo}}'><img class='dogs-photo' src="{{photo_path}}{{dog.photo}}" ></a>
+            <div class="cats-photos-container">
+                <div class='cats-photo-container'>
+                    <a class='colorbox group1' href='{{photo_path}}{{dog.photo}}'><img class='cats-photo' src="{{photo_path}}{{dog.photo}}" ></a>
                 </div>
 
                 {% if dog.dogsPhotos|length %}
-                    <div class="dogs-other-photos-container">
-                        <div class="dogs-other-photos-wrapper">
-                            <div class="dogs-photo-jcarousel" data-jcarousel="true">
+                    <div class="cats-other-photos-container">
+                        <div class="cats-other-photos-wrapper">
+                            <div class="cats-photo-jcarousel" data-jcarousel="true">
                                 <ul style="left: 0px; top: 0px;">
                                     {% for photo in dog.dogsPhotos %}
                                         <li><a class='colorbox group1' href='{{photo_path}}{{photo.photo}}'><img src="{{photo_path}}{{photo.photo}}"/></a></li>
@@ -29,73 +29,64 @@
                     </div>
                 {% endif %}
             </div>
-            <div class='dogs-about-container'>
-                <div class='sex-img'>
-                    <img src='{{ asset('bundles/app/img/sex/'~dog.sex~'.png') }}'>
-                </div>
-                <div class='dog-name'>
-                    {{ get_translated(dog, 'name') }}
-                </div>
-                <div class='dogs-description'>
-                    {{ get_translated(dog, 'description') }}
+            <div class='cats-about-container'>
+                <div class="cats-title">
+                    <div class='cats-sex'>
+                        <img src='{{ asset('bundles/app/img/sex/'~dog.sex~'.png') }}'>
+                    </div>
+                    <div class='cats-name'>
+                        {{ get_translated(dog, 'name') }}
+                    </div>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <a  class='cats-edit' href="{{ path('dogs_edit', { 'id': dog.idDogs }) }}"><img src='{{ asset('bundles/app/img/edit.png') }}'></a>
+                        {% endif %}
                 </div>
                 <div>
-                    {{"dogs.about.dogage"|trans}}
+                    {{"dogs.about.dogage"|trans}}:
                     {% set age = calculate_age(dog.bdate) %}
                     {% transchoice age.y with {'%month%': age.m, '%year%': age.y} %}
                     dogs.about.age
                     {% endtranschoice %}
                 </div>
                 <div>
-                    {{"dogs.about.birthday"|trans}}
-                    {{ dog.bdate |date('d.m.Y') }}
-                </div>
-
-                <div>
-                    {% if dog.dogTitles | length %}
-                        {{"dogs.about.titles"|trans}}
-
-                        {% for title in dog.dogTitles %}
-                            <div>{{title.titles}}</div>
-                        {% endfor %}
-                    {% endif%}
-                </div>
-                <div>
+                    {{"dogs.about.vaccinations"|trans}}:
                     {% if dog.dogVaccinations | length %}
-                        {{"dogs.about.vaccinations"|trans}}
                         {% for vacc in dog.dogVaccinations %}
                             <div>{{vacc.vaccinations}}</div>
                         {% endfor %}
+                    {% else %}
+                        <span> - </span>
                     {% endif %}
                 </div>
                 <div>
+                    {{"dogs.about.birthday"|trans}}:
+                    {{ dog.bdate |date('d.m.Y') }}
+                </div>
+                <div class='cats-description'>
+                    {{ get_translated(dog, 'description') }}
+                </div>
+
+                <div class='cats-buttons-container'>
                     <a class="colorbox-form orange-button" data-form-id="ask-question-form">{{'total.askquestion'|trans}}</a>
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-
-                        <a class="orange-button" href="{{ path('dogs_edit', { 'id': dog.idDogs }) }}">{{"total.edit"|trans}}</a>
-                        {{ form_start(delete_form) }}
-                        <input class="grey-button" type="submit" value={{"total.delete"|trans}}>
-                        {{ form_end(delete_form) }}
-
-                    {% endif %}
                 </div>
 
 
             </div>
-            {% if dog.videos|length %}
-                <div class='videos'>
-                    {% for video in dog.videos %}
-                        <div class='video-item'>{{video.video|raw}}</div>
-                    {% endfor %}
-                </div>
-            {% endif %}
+
         </div>
+        {% if dog.videos|length %}
+            <div class='videos'>
+                {% for video in dog.videos %}
+                    <div class='video-item'>{{video.video|raw}}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
     </div>
     <div class="popup-form" id="ask-question-form">
-        <div class="ask-question">
-            <h3>{{'total.askquestion'|trans}}</h3>
+        <div class="ask-question colored-header">
+            {{'total.askquestion'|trans}}
         </div>
-        <div class="dogs-add-question">
+        <div class="cats-add-question">
             {{ form_start(form) }}
             <div>
                 {{ form_widget(form.klname, {'attr': {'placeholder': 'reviews.label.name'|trans} })}}
@@ -105,8 +96,10 @@
             <div class="question-form">
                 {{ form_widget(form.question, {'attr': {'placeholder': 'reviews.label.comment'|trans, 'rows': 5} }) }}
             </div>
-
-            <input class="orange-button" type="submit" value={{'total.send'|trans}} />
+            <div class='button-container'>
+                <input class="orange-submit" type="submit" value={{'total.send'|trans}} />
+            </div>
+            
             {{ form_end(form) }}
         </div>
     </div>
@@ -116,7 +109,7 @@
     <script type="text/javascript" src="{{asset("bundles/app/js/jquery.jcarousel.min.js")}}"></script>
     <script type="text/javascript">
         $(function () {
-            $('.dogs-photo-jcarousel').jcarousel({
+            $('.cats-photo-jcarousel').jcarousel({
                 wrap: 'circular'
             });
 
