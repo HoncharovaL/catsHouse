@@ -382,7 +382,7 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 0;
+    padding: 10px 0 40px;
 }
 .nursery-photo{
     width: 500px;
@@ -567,15 +567,21 @@ h3 {
 .cats-other-photos-container img{
     width: 150px;
     height: 125px;
+    object-fit: contain;
 }
 .cats-other-photos-wrapper{
     position: relative;
 }
 .cats-photo-jcarousel ul{
-    justify-content: space-between;
+    justify-content: flex-start;
     display: flex;
     align-items: center;
     list-style: none;
+    width: 460px;
+    overflow: hidden;
+}
+.cats-photo-jcarousel ul li{
+    margin-right: 5px;
 }
 .cats-list-item .cats-photo{
     width: 100%;
