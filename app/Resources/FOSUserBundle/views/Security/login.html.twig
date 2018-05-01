@@ -8,8 +8,8 @@
         {% if csrf_token %}
             <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
         {% endif %}
-        <div class="log-in-head">
-            <h3>{{'layout.login'|trans}}</h3>
+        <div class="log-in-head colored-header">
+            {{'layout.login'|trans}}
         </div>
         <div class="log-in-content">
             <div class="user-name">
@@ -24,7 +24,7 @@
                 <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
                 <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
             </div>
-            <input class="orange-button" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+            <input class="orange-submit" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
 
         </div>
     </form>

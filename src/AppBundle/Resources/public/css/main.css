@@ -13,6 +13,10 @@
     src: url(../fonts/RobotoSlab-Bold.ttf);
 }
 @font-face {
+    font-family: robotoSlab;
+    src: url(../fonts/RobotoSlab-Regular.ttf);
+}
+@font-face {
     font-family: robotoMed;
     src: url(../fonts/Roboto-Medium.ttf);
 }
@@ -79,18 +83,20 @@ h3 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: robotoSlab;
+    font-family: robotoMed;
 }
 .cats-house-header{
     font-size: 35px;
     line-height: 40px;
     margin-top: 45px;
     margin-bottom: 30px;
+    text-align: center;
 }
 .cats-house-text{
     font-size: 15px;
     line-height: 20px;
     margin-bottom: 45px;
+    text-align: center;
 }
 .cats-house-donate{
     display: flex;
@@ -298,7 +304,7 @@ h3 {
     z-index: 2;
     transition: opacity 0.5s linear;
     opacity: 0;
-    font: 30px robotoSlab;
+    font: 30px robotoSBold;
     text-transform: uppercase;
 }
 .cats-list-item:hover .cats-name-overlay{
@@ -309,7 +315,7 @@ h3 {
     border-top: 1px solid transparent;
     background-color: #fff;
     padding-bottom: 50px;
-    font: 15px robotoSlab;
+    font: 15px robotoMed;
 
 
 }
@@ -333,23 +339,6 @@ h3 {
     border-bottom: 2px #fc6703 solid;
 }
 
-.dogs-add-question, .log-in-content, .edit-content{
-    position: relative;
-    z-index: 1;
-    padding: 20px;
-    margin-top: -10px;
-    border-top: 10px solid transparent;
-    background-image:
-        linear-gradient(white, white),  /*  общий фон блока, всегда идёт первым перекрывая всё что под ним  */
-        linear-gradient(to bottom right, transparent 50.5%, white 50.5%),
-        linear-gradient(to bottom left, transparent 50.5%, white 50.5%);
-    background-repeat: repeat, repeat-x, repeat-x;
-    background-position: 0 0, 10px 0, 10px 0;
-    background-size: auto auto, 20px 20px, 20px 20px;
-    background-clip: padding-box, border-box, border-box;  /*  обрезаем края у общей заливки  */
-    background-origin: padding-box, border-box, border-box, border-box, border-box; 
-}
-
 .cats-house-news-title {
     font-weight: bold;
     text-align: center;
@@ -366,63 +355,54 @@ h3 {
     justify-content: flex-end;
     margin-right: 10px;
 }
-.reviews-about-nursery .nursery-photo, .reviews-about-nursery .nursery-description {
-    display: inline-block;
-}
-
-.reviews-about-nursery .nursery-photo {
-    width: 60%;
-    float: left;
+.reviews-title{
+    font: 18px robotoReg ;
     text-align: center;
+    padding: 30px 0 25px;
 }
-
-.reviews-about-nursery .nursery-description {
-    width: 25%;
-    border: #3f84ba 2px solid;
-    padding: 15px;
-    font: 20px eirikRaude;
-    color: #6C6C6C;
-    height: 320px;
+.nursery-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
 }
-
-.reviews-about-nursery .nursery-description p {
-    padding-bottom: 10px;
+.nursery-photo{
+    width: 500px;
+    margin-right: 30px;
 }
-
-.reviews-about-nursery .nursery-description .important-info {
-    font:  22px eirikRaude;
-    color: #323232;
+.nursery-photo img{
+    width: 100%;
+    height: auto;
+    min-height: 200px;
 }
-
-.reviews-about-nursery .nursery-description .very-important-info {
-    font: 28px eirikRaude;
-    color: #323232;
-    padding-top: 10px;
-    padding-bottom: 0;
+.nursery-description{
+    font-family: robotoReg;
+    font-size: 15px;
+    line-height: 20px;
 }
-
-.reviews-about-nursery img {
-    max-height: 350px;
-    object-fit: contain; /* Fit logo in the image size */
-    -o-object-fit: contain; /* Fit logo fro opera browser */
-    object-position: top; /* Set logo position */
-    -o-object-position: top;
+.info-text{
+    font-size: 14px;
+    margin: 5px 0;
 }
-
+.info-part{
+    font-size: 16px;
+    font-family: robotoSlab;
+    margin: 10px 0;
+}
 .reviews-comment-item .date{
     opacity: .5;
     margin:  10px 0px;
     font: 15px eirikRaude;
 }
 .reviews-comment-item .title {
-    margin:  10px 0px;   
+    margin:  20px 0px;   
+    font: 15px robotoReg;
 }
 .reviews-comment-item .text {
-    margin:  10px 0px;
+    margin:  15px 0px;
 }
 .reviews-comment-item {
     padding: 30px 30px;
-    /*font: 18px eirikRaude;*/
     border-bottom: 1px solid #DCDCDC;
 }
 
@@ -432,24 +412,29 @@ h3 {
 }
 
 .reviews-add-comment .review-disclaimer {
-    padding-top: 28px;
+    padding-top: 60px;
 }
 .reviews-add-comment .review-disclaimer h4 {
-    color: #e59e18;
-    font-size: 18px;
-    font: bold italic 18px eirikRaude;
+    color: rgba(252, 103, 3, 0.8);
+    font: bold italic 16px robotoSlab;
+    line-height: 20px;
     padding-bottom: 20px;
 }
 
 .reviews-add-comment .review-disclaimer p {
-    font: 18px eirikRaude;
-    color: #B5B5B5;
+    font: italic 14px robotoSlab;
+    line-height: 18px;
+    color: rgba(47, 47, 47, 0.8);
     padding-bottom: 5px;
 }
 
 .reviews-add-comment .review-form {
-    padding: 20px 30px;
+    padding: 40px 30px;
     float: left;
+    text-align: right;
+}
+.review-form .orange-submit{
+    margin: 5px 0;
 }
 
 .reviews-add-comment input[type="text"], .reviews-add-comment textarea {
@@ -465,7 +450,7 @@ h3 {
 }
 .news-item{
     margin-bottom: 50px;
-    font-family: robotoSlab;
+    font-family: robotoMed;
 }
 .news-item-description{
     padding: 30px 0;
@@ -642,7 +627,7 @@ h3 {
 }
 .orange-button{
     padding:14px 30px;
-    font-family: robotoMed;
+    font-family: robotoReg;
     text-transform: uppercase;
     font-size: 16px;
     line-height: 20px;
@@ -651,9 +636,34 @@ h3 {
     border-radius: 10px;
     cursor: pointer;
 }
-.log-in-content .orange-button{
-    margin-top: 20px;
-    margin-left: 150px;
+.orange-submit{
+    border-style: none;
+    box-shadow: none;
+    padding:7px 10px 8px;
+    font-family: robotoReg;
+    font-size: 14px;
+    line-height: 18px;
+    background-color: rgba(252, 103, 3, 0.8);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.colored-header{
+    color: white;
+    text-align: center;
+    font: 18px robotoReg;
+}
+.log-in-content{
+    padding: 20px;
+    font: 15px robotoReg;
+    text-align: center;
+}
+.log-in-content label{
+    padding: 5px 0;
+    line-height: 25px;
+}
+.log-in-content .orange-submit{
+    margin: 20px 0 0;
 }
 
 .dogs-edit .dog-info label {
@@ -846,16 +856,10 @@ h3 {
 }
 
 .ask-question, .log-in-head, .edit-head{
-    line-height: 150px;
-    height: 150px;
+    line-height: 70px;
+    height: 70px;
     z-index: -1;
-    background-color: #e59e18;
-}
-.ask-question h3, .log-in-head h3, .edit-head h3{
-    padding: 75px 0;
-    text-align: center;
-    font: 30px eirikRaude;
-    color: white;
+    background-color: rgba(252, 103, 3, 0.7);
 }
 a.orange-button{
     text-align: center;

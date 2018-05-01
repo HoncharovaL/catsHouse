@@ -151,7 +151,7 @@ reviews:
     text:
         comment_author: '<strong>%name%</strong> wrote:'
         pay_attention: Pay attention!
-        comment_disclaimer: '<p>All comments are thoroughly moderated. For publication are not allowed: </p><p> - comments of an advertising nature </p><p> - comments containing insults </p><p> - comments without specifying contact information</p>'
+        comment_disclaimer: '<p> For publication are not allowed: </p><p> - comments of an advertising nature </p><p> - comments containing insults </p><p> - comments without specifying contact information</p>'
     nursery:
         conact_us_via: You can contact us via
         conact_us_via_phones: 'phone:'

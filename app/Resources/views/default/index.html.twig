@@ -53,7 +53,11 @@
                         <div class="cats-house-news-description">
                             {{ news.newsdesc|length <= 300 ? get_translated(news, 'newsdesc') : get_translated(news, 'newsdesc')|slice(0, 300)~'...' }}
                         </div>
-                        <div class="cats-house-news-more">{{'main.cats-house.more'|trans}}</div>
+                        <div class="cats-house-news-more">
+                            <a class='interactive-element' href='{{path('news_show', {'idNews': news.idNews})}}'>
+                                {{'main.cats-house.more'|trans}}
+                            </a>
+                        </div>
                     </div>
                 {% endfor %}
             </div>
