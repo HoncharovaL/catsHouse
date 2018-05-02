@@ -2,18 +2,13 @@
 
 {% block body %}
     <div class="news-edit container">
-        <div class="row">
-            <div class="button-container left col-4">
-                <a class="grey-button" href="{{ path('homepage') }}">{{'total.back'|trans}}</a>
-            </div>
-            <div class="button-container col-8">
-                {% if delete_form is defined %}
-                    {{ form_start(delete_form) }}
-                    <input class="grey-button" type="submit" value="{{"total.delete"|trans}}">
-                    {{ form_end(delete_form) }}
-                {% endif %}
-                <input class="orange-button" onclick="$('#main-form').submit();" type="submit" value="{{'total.save'|trans}}"/>
-            </div>
+        <div class="button-container both-sides">
+            {% if delete_form is defined %}
+                {{ form_start(delete_form) }}
+                <input class="gray-submit" type="submit" value="{{"total.delete"|trans}}">
+                {{ form_end(delete_form) }}
+            {% endif %}
+            <input class="orange-submit" onclick="$('#main-form').submit();" type="submit" value="{{'total.save'|trans}}"/>
         </div>
         {{ form_start(form, {'attr': {'id': 'main-form'} }) }}
         <div class="tabs">
@@ -22,17 +17,19 @@
                 <li><a href="#tab-photos">{{"total.photos"|trans}}</a></li>
                 <li><a href="#tab-videos">{{"total.videos"|trans}}</a></li>
             </ul>
-            <div class="news-info row" id="tab-main-info">
-                <div class="main-photo col-4">
-                    {{ form_widget(form.photoFile)}}
-                </div>
-                <div class="main-info col-6">
-                    {{ form_row(form.ndate, {'attr': {'class': 'parent-width'} })}}
-                    {{ form_row(form.title, {'attr': {'class': 'parent-width'} })}}
-                    {{ form_row(form.titleEn, {'attr': {'class': 'parent-width'} })}}
-                    {{ form_row(form.newsType, {'attr': {'class': 'parent-width'} })}}
-                    {{ form_row(form.newsdesc, {'attr': {'class': 'parent-width'} })}}
-                    {{ form_row(form.newsdescEn, {'attr': {'class': 'parent-width'} })}}
+            <div id="tab-main-info">
+                <div class="news-info">
+                    <div class="main-photo ">
+                        {{ form_widget(form.photoFile)}}
+                    </div>
+                    <div class="main-info ">
+                        {{ form_row(form.ndate, {'attr': {'class': 'parent-width'} })}}
+                        {{ form_row(form.title, {'attr': {'class': 'parent-width'} })}}
+                        {{ form_row(form.titleEn, {'attr': {'class': 'parent-width'} })}}
+                        {{ form_row(form.newsType, {'attr': {'class': 'parent-width'} })}}
+                        {{ form_row(form.newsdesc, {'attr': {'class': 'parent-width'} })}}
+                        {{ form_row(form.newsdescEn, {'attr': {'class': 'parent-width'} })}}
+                    </div>
                 </div>
             </div>
             <div class="embedded-form photos" id="tab-photos">
@@ -45,7 +42,7 @@
                     {% endfor %}
                 </ul>
                 <div class="add-button-container">
-                    <a href="#" class="add-new-element">{{"total.add_photo"|trans}}</a>
+                    <a href="#" class="add-new-element orange-submit">{{"total.add_photo"|trans}}</a>
                 </div>
             </div>
             {% do form.dogsPhotos.setRendered %}
@@ -60,7 +57,7 @@
                     {% endfor %}
                 </ul>
                 <div class="add-button-container">
-                    <a href="#" class="add-new-element">{{"total.add_video"|trans}}</a>
+                    <a href="#" class="add-new-element orange-submit">{{"total.add_video"|trans}}</a>
                 </div>
             </div>
             {% do form.videos.setRendered %}
