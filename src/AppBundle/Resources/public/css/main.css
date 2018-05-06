@@ -412,7 +412,7 @@ h3 {
 .reviews-comment-item .date{
     opacity: .5;
     margin:  10px 0px;
-    font: 15px eirikRaude;
+    font: 13px robotoReg;
 }
 .reviews-comment-item .title {
     margin:  20px 0px;   
@@ -464,14 +464,7 @@ h3 {
 .reviews-add-comment textarea {
     width: 100%;
 }
-.vaccinations-container .delete-icon{
-    right: 8px;
-    top: 12px;
-}
-.videos-container .delete-icon{
-    right: 8px;
-    top: 8px;
-}
+
 .news-info, .tabs .cats-tab-info,
 .tabs .nursery-info{
     display: flex;
@@ -716,7 +709,7 @@ a.orange-submit{
     font: 15px robotoReg;
     text-align: center;
 }
-.log-in-content{
+.log-in-content, .edit-content{
     padding: 20px;
     font: 15px robotoReg;
 }
@@ -724,7 +717,7 @@ a.orange-submit{
     padding: 5px 0;
     line-height: 25px;
 }
-.log-in-content .orange-submit{
+.log-in-content .orange-submit, .edit-content .orange-submit{
     margin: 20px 0 0;
 }
 
@@ -913,34 +906,21 @@ input[type="submit"] {
     width: 40%;
     margin: 5px;
 }
-.vaccination-item .right-col, .vaccination-item .left-col,
-.title-item .right-col, .title-item .left-col
-{
-    display: inline-block;
-    width: 40%;
-    margin: 5px;
+.vaccinations-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 .vaccination-item, .title-item {
-    width: 500px; 
+    width: 300px; 
     border: 1px #B5B5B5 solid;
-    margin: 10px 73px;
-    display: inline-block;
-    height: 110px;
-    line-height: 50px;
-}
-.services-info .left-col, .vaccination-item .left-col, .title-item .left-col{
-    float: left;
-}
-.vaccination-item:after, .title-item:after{
-    content: '.';
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-}
-
-.services-info .right-col, .vaccination-item .right-col, .title-item .right-col{
-    float: right;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    height: 50px;
+    position: relative;
 }
 .services-info .service-price{
     width: 80px;
@@ -957,9 +937,8 @@ input[type="submit"] {
     width: 500px;
 
 }
-.comments{
-    width: 500px;
-    margin: auto;
+.opacity-text{
+    opacity: 0.7;
 }
 
 .comment-item .user-name, .comment-item .comment-theme{

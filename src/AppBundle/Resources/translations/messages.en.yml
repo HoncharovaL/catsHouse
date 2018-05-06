@@ -161,4 +161,11 @@ reviews:
         email: Email
         comment: Comment
         phone: Phone
-        
+     
+comments: 
+    author: Author
+    phone: Phone number
+    email: Email
+    subject: Subject
+    
+    

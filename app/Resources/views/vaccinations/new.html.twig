@@ -1,10 +1,12 @@
-<div class="edit-head">
-    <h3>{{'total.create'|trans}}</h3>
+<div class="edit-head colored-header">
+    {{'total.create'|trans}}
 </div>
 <div class="edit-content">
-{{ form_start(form, {'action':path('vaccinations_new')}) }}
-{{ form_row(form.vaccinations, {'attr': {'class': 'parent-width'} })}}
-{{ form_row(form.vaccinationsEng, {'attr': {'class': 'parent-width'} })}}
-<input class="orange-button" type="submit" value={{'total.create'|trans}} />
-{{ form_end(form) }}
+    {{ form_start(form, {'action':path('vaccinations_new')}) }}
+    {{ form_row(form.vaccinations, {'attr': {'class': 'parent-width'} })}}
+    {{ form_row(form.vaccinationsEng, {'attr': {'class': 'parent-width'} })}}
+    <div class='button-container'>
+        <input class="orange-submit" type="submit" value={{'total.create'|trans}} />
+    </div>
+    {{ form_end(form) }}
 </div>

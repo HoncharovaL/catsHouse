@@ -162,3 +162,8 @@ reviews:
         email: Ваш e-mail
         comment: Комментарий
         phone: Телефон
+comments: 
+    author: Автор
+    phone: Телефон
+    email: Email
+    subject: Тема
