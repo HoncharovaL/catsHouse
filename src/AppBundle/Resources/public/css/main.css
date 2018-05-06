@@ -464,7 +464,16 @@ h3 {
 .reviews-add-comment textarea {
     width: 100%;
 }
-.news-info, .cats-tab-info{
+.vaccinations-container .delete-icon{
+    right: 8px;
+    top: 12px;
+}
+.videos-container .delete-icon{
+    right: 8px;
+    top: 8px;
+}
+.news-info, .tabs .cats-tab-info,
+.tabs .nursery-info{
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -689,6 +698,8 @@ a.orange-submit{
     font-family: robotoReg;
     font-size: 14px;
     line-height: 18px;
+    min-width: 100px;
+    text-align: center;
     background-color: rgba(47, 47, 47, 0.8);
     color: white;
     border-radius: 5px;

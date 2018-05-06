@@ -1,20 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="dogs-edit container">
-        <div class="row">
-            <div class="button-container left col-4">
-                <a class="grey-button" href="{{ path('dogs_index') }}">{{'total.back'|trans}}</a>
-            </div>
-            <div class="button-container col-8">
-                {% if delete_form is defined %}
-                    {{ form_start(delete_form) }}
-                    <input class="grey-button" type="submit" value="{{"total.delete"|trans}}">
-                    {{ form_end(delete_form) }}
-                {% endif %}
-                <input class="orange-button" onclick="$('#main-form').submit();" type="submit" value="{{'total.save'|trans}}"/>
-            </div>
+    <div class="cats-edit-container container">
+
+        <div class="button-container both-sides">
+            {% if delete_form is defined %}
+                {{ form_start(delete_form) }}
+                <input class="gray-submit" type="submit" value="{{"total.delete"|trans}}">
+                {{ form_end(delete_form) }}
+                {% else %}
+                    <a class='gray-submit' href="{{ path('dogs_index') }}">{{'total.back'|trans}}</a>
+            {% endif %}
+            <input class="orange-submit" onclick="$('#main-form').submit();" type="submit" value="{{'total.save'|trans}}"/>
         </div>
+
         {{ form_start(form, {'attr': {'id': 'main-form'} }) }}
         <div class="tabs">
             <ul>
@@ -36,12 +35,11 @@
                     {{ form_row(form.sex, {'attr': {'class': 'parent-width'} })}}
                     {{ form_row(form.state, {'attr': {'class': 'parent-width'} })}}
                     {{ form_row(form.quality, {'attr': {'class': 'parent-width'} })}}
-                    {{ form_row(form.litters, {'attr': {'class': 'parent-width'} })}}
                 </div>
             </div>
 
             <div class="embedded-form vaccinations" id="tab-vaccinations">
-                <ul class="form-collection-container" data-count="{{ form.dogVaccinations|length }}" id="vaccinations-fields-list"
+                <ul class="form-collection-container vaccinations-container" data-count="{{ form.dogVaccinations|length }}" id="vaccinations-fields-list"
                     data-prototype="{{ form_widget(form.dogVaccinations.vars.prototype)|e }}">
                     {% for dogVaccination in form.dogVaccinations %}
                         <li>
@@ -50,7 +48,7 @@
                     {% endfor %}
                 </ul>
                 <div class="add-button-container">
-                    <a href="#" class="add-new-element" >{{"total.add_vaccination"|trans}}</a>
+                    <a href="#" class="add-new-element orange-submit" >{{"total.add_vaccination"|trans}}</a>
                 </div>
             </div>
             {% do form.dogVaccinations.setRendered %}
@@ -65,13 +63,13 @@
                     {% endfor %}
                 </ul>
                 <div class="add-button-container">
-                    <a href="#" class="add-new-element">{{"total.add_photo"|trans}}</a>
+                    <a href="#" class="add-new-element orange-submit">{{"total.add_photo"|trans}}</a>
                 </div>
             </div>
             {% do form.dogsPhotos.setRendered %}
 
             <div class="embedded-form videos" id="tab-videos">
-                <ul class="form-collection-container" data-count="{{ form.videos|length }}" id="videos-fields-list"
+                <ul class="form-collection-container videos-container" data-count="{{ form.videos|length }}" id="videos-fields-list"
                     data-prototype="{{ form_widget(form.videos.vars.prototype)|e }}">
                     {% for video in form.videos %}
                         <li>
@@ -80,7 +78,7 @@
                     {% endfor %}
                 </ul>
                 <div class="add-button-container">
-                    <a href="#" class="add-new-element">{{"total.add_video"|trans}}</a>
+                    <a href="#" class="add-new-element orange-submit">{{"total.add_video"|trans}}</a>
                 </div>
             </div>
             {% do form.videos.setRendered %}

@@ -7,6 +7,8 @@
                 {{ form_start(delete_form) }}
                 <input class="gray-submit" type="submit" value="{{"total.delete"|trans}}">
                 {{ form_end(delete_form) }}
+                 {% else %}
+                    <a class='gray-submit' href="{{ path('homepage') }}">{{'total.back'|trans}}</a>
             {% endif %}
             <input class="orange-submit" onclick="$('#main-form').submit();" type="submit" value="{{'total.save'|trans}}"/>
         </div>

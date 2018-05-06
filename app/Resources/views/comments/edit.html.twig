@@ -2,18 +2,13 @@
 
 {% block body %}
     <div class="services-edit container">
-        <div class="row">
-            <div class="button-container left col-4">
-                <a class="grey-button" href="{{ path('nursery_show', { 'idNursery': get_nursery_id()}) }}">{{'total.back'|trans}}</a>
-            </div>
-            <div class="button-container col-8">
+        <div class="button-container both-sides">
                 {% if delete_form is defined %}
                     {{ form_start(delete_form) }}
-                    <input class="grey-button" type="submit" value="{{"total.delete"|trans}}">
+                    <input class="gray-submit" type="submit" value="{{"total.delete"|trans}}">
                     {{ form_end(delete_form) }}
                 {% endif %}
-                <input class="orange-button" onclick="$('#main-form').submit();" type="submit" value="{{'total.save'|trans}}"/>
-            </div>
+                <input class="orange-submit" onclick="$('#main-form').submit();" type="submit" value="{{'total.save'|trans}}"/>
         </div>
         {{ form_start(form, {'attr': {'id': 'main-form'} }) }}
         <div class="tabs">

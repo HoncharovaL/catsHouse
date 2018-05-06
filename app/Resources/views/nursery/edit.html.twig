@@ -2,13 +2,9 @@
 
 {% block body %}
     <div class="nursery-edit container">
-        <div class="row">
-            <div class="button-container left col-4">
-                <a class="grey-button" href="{{ path('nursery_show', { 'idNursery': get_nursery_id()}) }}">{{'total.back'|trans}}</a>
-            </div>
-            <div class="button-container col-8">                
-                <input class="orange-button" onclick="$('#main-form').submit();" type="submit" value="{{'total.save'|trans}}"/>
-            </div>
+        <div class="button-container both-sides">
+            <a class='gray-submit' href="{{ path('nursery_show', { 'idNursery': get_nursery_id()}) }}">{{'total.back'|trans}}</a>
+            <input class="orange-submit" onclick="$('#main-form').submit();" type="submit" value="{{'total.save'|trans}}"/>
         </div>
         {{ form_start(form, {'attr': {'id': 'main-form'} }) }}
         <div class="tabs">
@@ -16,7 +12,7 @@
                 <li><a href="#tab-main-info">{{'total.main_info'|trans}}</a></li>
                 <li><a href="#tab-comments">{{"total.comments"|trans}}</a></li>
             </ul>
-            <div class="nursery-info row" id="tab-main-info">
+            <div class="nursery-info" id="tab-main-info">
                 <div class="main-photo col-4">
                     {{ form_widget(form.photoFile)}}
                 </div>
@@ -51,8 +47,8 @@
                         <div class="user-question">
                             {{ comment.question }}
                         </div>
-                        <div class="comment-edit">
-                            <a class="orange-button" href="{{ path('comments_edit', { 'idComments': comment.idComments }) }}">{{'total.edit'|trans}}</a>
+                        <div class="button-container">
+                            <a class="orange-submit" href="{{ path('comments_edit', { 'idComments': comment.idComments }) }}">{{'total.edit'|trans}}</a>
                         </div>    
                     </div>
 
