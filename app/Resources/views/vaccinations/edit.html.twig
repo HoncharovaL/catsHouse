@@ -1,10 +1,12 @@
-<div class="edit-head">
-    <h3>{{'total.edit'|trans}}</h3>
+<div class="edit-head colored-header">
+    {{'total.edit'|trans}}
 </div>
 <div class="edit-content">
     {{ form_start(edit_form, {'action':path('vaccinations_edit',{'idVaccinations':app.request.get('idVaccinations')})}) }}
     {{ form_row(edit_form.vaccinations, {'attr': {'class': 'parent-width'} })}}
     {{ form_row(edit_form.vaccinationsEng, {'attr': {'class': 'parent-width'} })}}
-    <input class="orange-button" type="submit" value={{'total.edit'|trans}} />
+    <div class='button-container'>
+        <input class="orange-submit" type="submit" value={{'total.edit'|trans}} />
+    </div>
     {{ form_end(edit_form) }}
 </div>

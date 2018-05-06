@@ -38,7 +38,7 @@
                         {{ get_translated(dog, 'name') }}
                     </div>
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <a  class='cats-edit' href="{{ path('dogs_edit', { 'id': dog.idDogs }) }}"><img src='{{ asset('bundles/app/img/edit.png') }}'></a>
+                        <a  class='cats-edit' href="{{ path('dogs_edit', { 'id': dog.idDogs }) }}"><img src='{{ asset('bundles/app/img/editor.png') }}'></a>
                         {% endif %}
                 </div>
                 <div>

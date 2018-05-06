@@ -873,13 +873,17 @@ a.orange-submit{
     margin: auto;
 }
 
-
-
+.news-edit, .cats-edit, .nursery-edit{
+    margin-bottom: 40px;
+}
+.cats-list{
+    margin: 40px 0 50px;
+}
 .ask-question, .log-in-head, .edit-head{
     line-height: 70px;
     height: 70px;
     z-index: -1;
-    background-color: rgba(252, 103, 3, 0.7);
+    background-color: rgba(252, 103, 3, 0.8);
 }
 a.orange-button{
     text-align: center;

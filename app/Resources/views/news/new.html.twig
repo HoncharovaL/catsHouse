@@ -50,7 +50,7 @@
             {% do form.dogsPhotos.setRendered %}
 
             <div class="embedded-form videos" id="tab-videos">
-                <ul class="form-collection-container" data-count="{{ form.videos|length }}" id="videos-fields-list"
+                <ul class="form-collection-container videos-container" data-count="{{ form.videos|length }}" id="videos-fields-list"
                     data-prototype="{{ form_widget(form.videos.vars.prototype)|e }}">
                     {% for video in form.videos %}
                         <li>
