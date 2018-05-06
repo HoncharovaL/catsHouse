@@ -464,7 +464,7 @@ h3 {
 .reviews-add-comment textarea {
     width: 100%;
 }
-.news-info{
+.news-info, .cats-tab-info{
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;

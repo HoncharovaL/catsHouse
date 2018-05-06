@@ -19,16 +19,15 @@
         <div class="tabs">
             <ul>
                 <li><a href="#tab-main-info">{{'total.main_info'|trans}}</a></li>
-                <li><a href="#tab-titles">{{form.dogTitles.vars.label|trans}}</a></li>
                 <li><a href="#tab-vaccinations">{{form.dogVaccinations.vars.label|trans}}</a></li>
                 <li><a href="#tab-photos">{{form.dogsPhotos.vars.label|trans}}</a></li>
                 <li><a href="#tab-videos">{{form.videos.vars.label|trans}}</a></li>
             </ul>
-            <div class="dog-info row" id="tab-main-info">
-                <div class="main-photo col-4">
+            <div class="cats-tab-info" id="tab-main-info">
+                <div class="main-photo">
                     {{ form_widget(form.photoFile)}}
                 </div>
-                <div class="main-info col-6">
+                <div class="main-info">
                     {{ form_row(form.name, {'attr': {'class': 'parent-width'} })}}
                     {{ form_row(form.nameEn, {'attr': {'class': 'parent-width'} })}}
                     {{ form_row(form.description, {'attr': {'class': 'parent-width'} })}}
@@ -40,21 +39,6 @@
                     {{ form_row(form.litters, {'attr': {'class': 'parent-width'} })}}
                 </div>
             </div>
-            <div class="embedded-form titles" id="tab-titles">
-                <ul class="form-collection-container" data-count="{{ form.dogTitles|length }}" id="titles-fields-list"
-                    data-prototype="{{ form_widget(form.dogTitles.vars.prototype)|e }}">
-                    {% for dogTitle in form.dogTitles %}
-                        <li>
-                            {{ form_row(dogTitle.titles) }}
-                            {{ form_row(dogTitle.description) }}
-                        </li>
-                    {% endfor %}
-                </ul>
-                <div class="add-button-container">
-                    <a href="#" class="add-new-element">{{"total.add_title"|trans}}</a>
-                </div>
-            </div>
-            {% do form.dogTitles.setRendered %}
 
             <div class="embedded-form vaccinations" id="tab-vaccinations">
                 <ul class="form-collection-container" data-count="{{ form.dogVaccinations|length }}" id="vaccinations-fields-list"
