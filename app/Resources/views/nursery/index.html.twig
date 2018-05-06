@@ -4,7 +4,7 @@
     <div class='container'>
         <div class='partner-container'>
             <div class="button-container">
-                <a class="orange-button" href="{{ path('nursery_new') }}">{{'total.create'|trans}}</a>
+                <a class="orange-submit" href="{{ path('nursery_new') }}">{{'total.create'|trans}}</a>
             </div>
             {% for nursery in nurseries %}
                 <div class='partner-item'>
@@ -21,8 +21,9 @@
                             {{'nursery.list.owner'|trans}}
                             {{ get_translated(nursery, 'owner') }}
                         </div>                 
-                        
-                        <a class="orange-button" href="{{ path('nursery_editPar', { 'idNursery': nursery.idNursery }) }}">{{'total.edit'|trans}}</a>
+                        <div class='button-container'>
+                            <a class="orange-submit" href="{{ path('nursery_editPar', { 'idNursery': nursery.idNursery }) }}">{{'total.edit'|trans}}</a>
+                        </div>
                     </div>
                 </div>
             {% endfor %}
